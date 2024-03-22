@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:macro name="slider_link1" params="">
+        <joint name="slider_joint1">
+        <command_interface name="velocity">
+            <param name="min">0.0</param>
+            <param name="max">5.0</param>
+        </command_interface>
+        <state_interface name="position" />
+        <state_interface name="velocity" />
+        </joint>
+    </xacro:macro>
+    <xacro:macro name="slider_link2" params="">
+        <joint name="slider_joint2">
+        <command_interface name="velocity">
+            <param name="min">0.0</param>
+            <param name="max">5.0</param>
+        </command_interface>
+        <state_interface name="position" />
+        <state_interface name="velocity" />
+        </joint>
+    </xacro:macro>
+</robot>

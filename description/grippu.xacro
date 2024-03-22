@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+<xacro:include filename="inertial_macros.xacro" />
+    <joint name="slider_joint1" type="prismatic">
+        <origin xyz="0.25 0.02 0" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="slider_link1"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="0" upper="0.1" velocity="100" effort="100"/> 
+    </joint>
+
+    <link name="slider_link1">
+        <visual>
+            <origin xyz="0 0 0.03" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.15 0.03 0.03" />
+            </geometry>
+            <material name="blue" />
+        </visual>
+        <collision>
+            <origin xyz="0 0 0.03" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.15 0.03 0.03" />
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.05" x="0.05" y="0.025" z="0.015">
+            <origin xyz="0 0 0.075" rpy="0 0 0"/>
+        </xacro:inertial_box>
+    </link>
+    
+    
+    
+    <joint name="slider_joint2" type="prismatic">
+        <origin xyz="0.25 -0.02 0" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="slider_link2"/>
+        <axis xyz="0 -1 0"/>
+        <limit lower="0" upper="0.1" velocity="100" effort="100"/> 
+    </joint>
+
+    <link name="slider_link2">
+        <visual>
+            <origin xyz="0 0 0.03" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.15 0.03 0.03" />
+            </geometry>
+            <material name="blue" />
+        </visual>
+        <collision>
+            <origin xyz="0 0 0.03" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.15 0.03 0.03" />
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.05" x="0.05" y="0.025" z="0.015">
+            <origin xyz="0 0 0.075" rpy="0 0 0"/>
+        </xacro:inertial_box>
+    </link>
+ 
+    
+ 
+    
+    
+    
+</robot>
